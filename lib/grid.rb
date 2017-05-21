@@ -43,5 +43,3 @@ class Grid
 
 
 end
-
-puts "you "
