@@ -1,5 +1,7 @@
-
 require './lib/messages'
+require './lib/computer_ship_placement'
+require './lib/player_ship_placement'
+require 'pry' 
 
 class Menu
 
@@ -26,7 +28,7 @@ class Menu
 
   def play
     computer_placement = ComputerShipPlacement.new
-    player_placement = PlayerShipPlacement.new 
+    player_placement = PlayerShipPlacement.new
 
   end
 
