@@ -9,7 +9,15 @@ class ComputerShipPlacementTest < Minitest::Test
   def test_computer_ship_placement_exists
       placement = ComputerShipPlacement.new
 
-      assert_instance_of ComputerShipPlacement, placement 
+      assert_instance_of ComputerShipPlacement, placement
+  end
+
+  def test_first_coordinate_assignment
+      placement = ComputerShipPlacement.new
+
+
+
+      
   end
 
 end
