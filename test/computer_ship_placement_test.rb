@@ -21,10 +21,27 @@ class ComputerShipPlacementTest < Minitest::Test
                         ["C1", "C2", "C3", "C4"],
                         ["D1", "D2", "D3", "D4"]]
 
-      has_coord = possible_coords.any? do |index|
+      has_coord = possible_coords.any? do |i|
         first_coord
       end
       assert has_coord
+  end
+
+  def test_no_coordinates_overlap
+    # placement = ComputerShipPlacement.new
+      5000.times do
+        placement = ComputerShipPlacement.new
+        placement.run
+        refute_equal placement.two_unit_ship_first_coord, placement.two_unit_ship_second_coord
+        refute_equal placement.two_unit_ship_first_coord, placement.three_unit_ship_first_coord
+        refute_equal placement.two_unit_ship_first_coord, placement.three_unit_ship_middle_coord
+        refute_equal placement.two_unit_ship_first_coord, placement.three_unit_ship_end_coord
+
+        refute_equal placement.two_unit_ship_second_coord, placement.three_unit_ship_first_coord
+        refute_equal placement.two_unit_ship_second_coord, placement.three_unit_ship_middle_coord
+        refute_equal placement.two_unit_ship_second_coord, placement.three_unit_ship_end_coord
+      end
+        # assert nil, overlap
   end
 
 end
