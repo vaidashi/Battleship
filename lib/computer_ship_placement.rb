@@ -7,6 +7,8 @@ class ComputerShipPlacement
               :three_unit_ship_first_coord, :three_unit_ship_second_coord, :three_unit_ship_third_coord
               :validation
 
+  attr_writer :two_unit_ship_first_coord, :three_unit_ship_first_coord
+
   def initialize
     @computer_grid = Grid.new
     @two_unit_ship_first_coord = two_unit_ship_first_coord
@@ -17,12 +19,7 @@ class ComputerShipPlacement
     @validation = false
   end
 
-  def operational
-    unless validation
-      two_unit_ship
-      three_unit_ship
-    end
-  end
+
 
   def two_unit_ship
     two_unit_ship_first_coord
@@ -36,8 +33,8 @@ class ComputerShipPlacement
     verify_ships_do_not_intersect
   end
 
-  def two_unit_ship_first_coord ## refactor later to own separate rb
-    @two_unit_ship_first_coord = computer_grid.coordinates[rand(4)][rand(4)]
+  def two_unit_ship_first_coord ## memoization
+    @two_unit_ship_first_coord ||= computer_grid.coordinates[rand(4)][rand(4)]
   end
 
   def two_unit_ship_second_coord ##refactor later to own separate rb file
@@ -77,7 +74,7 @@ class ComputerShipPlacement
   end
 
   def three_unit_ship_first_coord##refactor later to own separate rb
-    @three_unit_ship_first_coord = computer_grid.coordinates[rand(4)][rand(4)]
+    @three_unit_ship_first_coord ||= computer_grid.coordinates[rand(4)][rand(4)]
   end
 
   def three_unit_ship_end_coord##refacctor later to own separate rb
@@ -199,6 +196,13 @@ class ComputerShipPlacement
       validation
     else
       @validation = true
+    end
+  end
+
+  def operational
+    if @validation == true
+      two_unit_ship
+      three_unit_ship
     end
   end
 
