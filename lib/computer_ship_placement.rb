@@ -1,11 +1,11 @@
 
-require_relative 'grid'
+require './lib/grid'
 
 class ComputerShipPlacement
 
-  attr_reader :@computer_grid, :@two_unit_ship_first_coord, :@two_unit_ship_second_coord,
-              :@three_unit_ship_first_coord, :@three_unit_ship_second_coord, :@three_unit_ship_third_coord
-              :@validation
+  attr_reader :computer_grid, :two_unit_ship_first_coord, :two_unit_ship_second_coord,
+              :three_unit_ship_first_coord, :three_unit_ship_second_coord, :three_unit_ship_third_coord
+              :validation
 
   def initialize
     @computer_grid = Grid.new
@@ -17,8 +17,27 @@ class ComputerShipPlacement
     @validation = false
   end
 
+  def operational
+    unless validation
+      two_unit_ship
+      three_unit_ship
+    end
+  end
+
+  def two_unit_ship
+    two_unit_ship_first_coord
+    two_unit_ship_second_coord
+  end
+
+  def three_unit_ship
+    three_unit_ship_first_coord
+    three_unit_ship_middle_coord
+    three_unit_ship_end_coord
+    verify_ships_do_not_intersect
+  end
+
   def two_unit_ship_first_coord ## refactor later to own separate rb
-    @two_unit_ship_first_coord = computer.coordinates[rand(4)][rand(4)]
+    @two_unit_ship_first_coord = computer_grid.coordinates[rand(4)][rand(4)]
   end
 
   def two_unit_ship_second_coord ##refactor later to own separate rb file

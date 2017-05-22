@@ -3,7 +3,7 @@ require 'pry'
 
 class Grid
 
-  attr_reader :coordinate_values_duplicate_check
+  attr_reader :coordinate_values_duplicate_check, :display_grid
   attr_accessor :coordinates, :all_coordinate_values, :row_a, :row_b, :row_c, :row_d
 
   def initialize
@@ -19,7 +19,10 @@ class Grid
                                           "B1", "B2", "B3", "B4",
                                           "C1", "C2", "C3", "C4",
                                           "D1", "D2", "D3", "D4"]
+
+    @display_grid = display_grid
   end
+
 
   def display_grid
     @row_a = "A     " + all_coordinate_values[0].gsub(/[ABCD1234]/, " ") + "    " + all_coordinate_values[1].gsub(/[ABCD1234]/, " ") + "    " + all_coordinate_values[2].gsub(/[ABCD1234]/, " ") + "    " + all_coordinate_values[3].gsub(/[ABCD1234]/, " ")
@@ -37,7 +40,6 @@ class Grid
     puts ""
     puts row_d
     puts "============================="
-
 
   end
 
