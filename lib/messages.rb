@@ -37,13 +37,13 @@ class Messages
   end
 
   def player_two_element_ship_placement_message
-    puts "Enter the squares for the two-unit ship:"
+    puts "Enter the coordinates for the two-unit ship:"
     puts "For example: A1 A2"
 
   end
 
   def player_three_element_ship_placement_message
-    puts "Enter the squares for the three-unit ship:"
+    puts "Enter the coordinates for the three-unit ship:"
     puts "For example: A1 A3"
   end
 
