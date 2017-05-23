@@ -98,7 +98,7 @@ class Messages
     puts "Sorry, you lose. Game over."
   end
 
-  def invalid_ship_coordinate_message
+  def out_of_range_ship_coordinate_message
     puts "Sorry, those coordinates are out of range. Try again."
   end
 

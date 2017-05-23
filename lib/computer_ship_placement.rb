@@ -155,7 +155,7 @@ class ComputerShipPlacement
     elsif three_unit_ship_first_coord == "C2" && three_unit_ship_second_coord == "A2"
       @three_unit_ship_mid_coord = "B2"
     elsif three_unit_ship_first_coord == "C3" && three_unit_ship_second_coord == "C1"
-      @three_unit_mid_coord = "C2"
+      @three_unit_ship_mid_coord = "C2"
     elsif three_unit_ship_first_coord == "C3" && three_unit_ship_second_coord == "A3"
       @three_unit_ship_mid_coord = "B3"
     elsif three_unit_ship_first_coord == "C4" && three_unit_ship_second_coord == "C2"
