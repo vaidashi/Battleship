@@ -2,7 +2,7 @@
 require 'pry'
 
 
-class Messages
+module Messages
 
   def welcome_message
     puts "Welcome to BATTLESHIP"

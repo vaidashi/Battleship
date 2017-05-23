@@ -6,6 +6,7 @@ class PlayerShipPlacement
 
   include Messages
 
+
   attr_reader :player_grid, :two_unit_ship_first_coord, :two_unit_ship_second_coord,
               :three_unit_ship_first_coord, :three_unit_ship_mid_coord, :three_unit_ship_end_coord
 
@@ -126,11 +127,11 @@ class PlayerShipPlacement
     three_unit_coord_combo = three_unit_placement.split(' ')
     @three_unit_ship_first_coord = three_unit_coord_combo[0]
     @three_unit_ship_end_coord = three_unit_coord_combo[1]
-    get_three_unit_mid_coordinate
+    get_three_unit_middle_coordinate
     return three_unit_coord_combo
   end
 
-  def get_three_unit_mid_coordinate
+  def get_three_unit_middle_coordinate
     if three_unit_ship_first_coord == "A1" && three_unit_ship_second_coord == "A3"
       @three_unit_ship_mid_coord = "A2"
     elsif three_unit_ship_first_coord == "A1" && three_unit_ship_second_coord == "C1"
@@ -227,7 +228,3 @@ class PlayerShipPlacement
       validate_three_unit_ship_placement
     end
   end
-
-
-
-end
