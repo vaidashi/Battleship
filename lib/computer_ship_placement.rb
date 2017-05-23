@@ -4,7 +4,7 @@ require './lib/grid'
 class ComputerShipPlacement
 
   attr_reader :computer_grid, :two_unit_ship_first_coord, :two_unit_ship_second_coord,
-              :three_unit_ship_first_coord, :three_unit_ship_second_coord, :three_unit_ship_third_coord
+              :three_unit_ship_first_coord, :three_unit_ship_second_coord, :three_unit_ship_end_coord
               :validation
 
   attr_writer :two_unit_ship_first_coord, :three_unit_ship_first_coord
