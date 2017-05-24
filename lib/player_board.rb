@@ -23,7 +23,7 @@ class PlayerBoard
     @two_unit_ship_first_coord = computer_ship_placement.two_unit_ship_first_coord
     @two_unit_ship_second_coord = computer_ship_placement.two_unit_ship_second_coord
     @three_unit_ship_first_coord = computer_ship_placement.three_unit_ship_first_coord
-    @three_unit_ship_middle_coord = computer_ship_placement.three_unit_ship_middle_coord
+    @three_unit_ship_mid_coord = computer_ship_placement.three_unit_ship_mid_coord
     @three_unit_ship_end_coord = computer_ship_placement.three_unit_ship_end_coord
     @coordinates_targeted = []
     @two_unit_ship_health = 2
@@ -85,7 +85,7 @@ class PlayerBoard
 
   def hit(target)
     i = player_board.all_coordinate_values.index(target)
-    player_board.all_coordinate_values[i] = "H"
+    player_board.all_coordinate_values[i] = "H "
     ship_health(target)
     game_over
   end
@@ -111,7 +111,7 @@ class PlayerBoard
   def miss(target)
     missed_message
     i = player_board.all_coordinate_values.index(target)
-    player_board.all_coordinate_values[i] = "M"
+    player_board.all_coordinate_values[i] = "M "
   end
 
   def game_over
@@ -119,7 +119,7 @@ class PlayerBoard
       player_wins_message
       puts "Shots Taken: #{shots_taken}"
       @end_time = Time.now
-      puts "Time Taken: #{@end_time - @start_time}"
+      puts "Total Game Time: #{@end_time - @start_time}"
       abort
     end
   end

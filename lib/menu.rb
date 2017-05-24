@@ -1,9 +1,11 @@
 require './lib/messages'
 require './lib/computer_ship_placement'
 require './lib/player_ship_placement'
-require 'pry' 
+require 'pry'
 
 class Menu
+
+include Messages
 
   def initialize
     start_screen
@@ -52,3 +54,6 @@ class Menu
   end
 
 end
+
+menu = Menu.new
+# menu.start_screen
