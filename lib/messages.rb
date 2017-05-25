@@ -60,6 +60,10 @@ module Messages
     p "Computer Board"
   end
 
+  def next_turn_message
+    p "Hit enter to continue"
+  end
+
   def computer_to_player_hit_message
     p "Hit enemy ship!"
   end

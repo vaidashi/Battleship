@@ -104,7 +104,8 @@ class ComputerBoard
     missed_message
     i  = computer_board.all_coordinate_values.index(target)
     computer_board.all_coordinate_values[i] = "M "
-  end 
+  end
 
+# binding.pry
 
 end

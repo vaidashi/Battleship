@@ -12,13 +12,15 @@ class PlayerShipPlacementTest < Minitest::Test
     assert_instance_of PlayerShipPlacement, player_ship
   end
 
-  # def test_if_coordinates_for_a_two_unit_ship_makes_sense
-  #   placement = PlayerShipPlacement.new
-  #   placement.two_unit_ship_first_coord = "A1"
-  #   two_ship_second = placement.two_unit_ship_second_coord
-  #
-  #
-  #   assert_includes ["A2", "B1"], two_ship_second
-  # end
+  def test_if_coordinates_for_a_two_unit_ship_makes_sense
+    placement = PlayerShipPlacement.new
 
+    assert_equal ["A1", "A2"], placement.get_two_unit_ship_placement("A1 A2")
+  end
+
+  def test_if_coordinates_for_a_three_unit_ship_makes_sense
+    placement = PlayerShipPlacement.new
+
+    assert_equal ["A1", "A3"], placement.get_three_unit_ship_placement("A1 A3")
+  end
 end
